@@ -27,7 +27,7 @@
   "jest": {
     "verbose": true,
     "testMatch": [
-      "**/test/**/*Spec.js"
+      "<rootDir>/test/**/*Spec.js"
     ]
   },
   "devDependencies": {

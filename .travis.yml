@@ -1,0 +1,7 @@
+language: node_js
+node_js: '7'
+before_script: '(cd campfhir && yarn)'
+script:
+  - npm test
+  - (cd campfhir && npm test)
+cache: yarn
