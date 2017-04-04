@@ -5,7 +5,7 @@ const fhir = require('../');
 const app = express();
 
 app.use(compression());  // gzip assets
-app.use('/fhir', fhir);
+app.use('/fhir', fhir());
 app.use(express.static('public'));
 
 app.get('*', (request, response) => {

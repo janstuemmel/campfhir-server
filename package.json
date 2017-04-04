@@ -21,11 +21,13 @@
   "homepage": "https://github.com/janstuemmel/campfhir-server#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "fhir-proof": "^0.1.3",
     "lodash": "^4.17.4",
     "pg": "^6.1.5"
   },
   "jest": {
     "verbose": true,
+    "testEnvironment": "node",
     "testMatch": [
       "<rootDir>/test/**/*Spec.js"
     ]
