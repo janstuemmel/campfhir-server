@@ -32,11 +32,10 @@ class App extends Component {
 module.exports = App;
 
 const styles = {
-  wrapper: {
+  wrapper: {},
+  content: {
     margin: '0 auto',
     maxWidth: 1280, // wxga / 720p
-  },
-  content: {
     paddingLeft: 10,
     paddingRight: 10
   }

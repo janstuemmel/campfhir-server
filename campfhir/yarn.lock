@@ -1074,7 +1074,7 @@ circular-json@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.1.tgz#be8b36aefccde8b3ca7aa2d6afc07a37242c0d2d"
 
-classnames@^2.2.5:
+classnames@^2.1.3, classnames@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -1954,6 +1954,14 @@ fbjs@^0.8.1, fbjs@^0.8.4:
     promise "^7.1.1"
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
+
+fhir-proof@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/fhir-proof/-/fhir-proof-0.2.0.tgz#32f2a804cad956dffec0ed95d95f01cf55572505"
+  dependencies:
+    lodash "^4.17.4"
+    tcomb "^3.2.20"
+    uuid "^3.0.1"
 
 figures@^1.3.5:
   version "1.7.0"
@@ -3536,7 +3544,7 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
-lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.2.0, lodash@^4.3.0:
+lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -5018,6 +5026,30 @@ tar@^2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
+tcomb-form-templates-bootstrap@^0.2.0:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/tcomb-form-templates-bootstrap/-/tcomb-form-templates-bootstrap-0.2.2.tgz#0e371c0e00a23b9f898ee53fd3ff1b85ece9d73c"
+  dependencies:
+    classnames "^2.1.3"
+    tcomb "^3.0.0"
+
+tcomb-form@^0.9.16:
+  version "0.9.16"
+  resolved "https://registry.yarnpkg.com/tcomb-form/-/tcomb-form-0.9.16.tgz#874a91c9ce1e311b7bf0523ed65b6948998dfb84"
+  dependencies:
+    tcomb-form-templates-bootstrap "^0.2.0"
+    tcomb-validation "^3.0.0"
+
+tcomb-validation@^3.0.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/tcomb-validation/-/tcomb-validation-3.3.0.tgz#29ada8534203500e90b245eedd0e1a80f1909ba2"
+  dependencies:
+    tcomb "^3.0.0"
+
+tcomb@^3.0.0, tcomb@^3.2.20:
+  version "3.2.20"
+  resolved "https://registry.yarnpkg.com/tcomb/-/tcomb-3.2.20.tgz#823e689dcf3518d82c4b6c890a822aa6916692cd"
+
 ternary-stream@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ternary-stream/-/ternary-stream-2.0.1.tgz#064e489b4b5bf60ba6a6b7bc7f2f5c274ecf8269"
@@ -5252,7 +5284,7 @@ uuid@^2.0.1, uuid@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
-uuid@^3.0.0:
+uuid@^3.0.0, uuid@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
 

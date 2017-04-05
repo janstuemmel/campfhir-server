@@ -5,7 +5,7 @@ const Actions = createActions({
   'get': { children: [ 'completed', 'failed' ] }
 });
 
-Actions.get.listen((id) => {
+Actions.get.listen((resourceType, id) => {
   Actions.get.completed({});
 });
 
