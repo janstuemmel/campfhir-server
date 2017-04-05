@@ -2,6 +2,12 @@ language: node_js
 node_js: '7'
 before_script: '(cd campfhir && yarn)'
 script:
-  - npm test
+  - npm test -- --coverage
   - (cd campfhir && npm test)
 cache: yarn
+after_success:
+  - node_modules/.bin/codeclimate-test-reporter < ./coverage/lcov.info
+addons:
+  code_climate:
+    repo_token:
+      secure: eb123a31f98bbd57a8b18b76f1c6b40c59aa9b64b469416ac2493f459891dc79
