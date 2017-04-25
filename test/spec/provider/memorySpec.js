@@ -45,6 +45,34 @@ describe('memory provider spec', () => {
   });
 
 
+  it('should getByType', () => {
+
+    // given
+    Memory.add({ id: 1, resourceType: 'foo' });
+    Memory.add({ id: 2, resourceType: 'foo' });
+
+    // when
+    var c = Memory.getByType('foo');
+
+    // then
+    expect(c).toHaveLength(2);
+  });
+
+
+  it('should not getByType', () => {
+
+    // given
+    Memory.add({ id: 1, resourceType: 'foo1' });
+    Memory.add({ id: 2, resourceType: 'foo2' });
+
+    // when
+    var c = Memory.getByType('bar');
+
+    // then
+    expect(c).toHaveLength(0);
+  });
+
+
   it('should get resources with default limit', () => {
 
     // given
