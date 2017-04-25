@@ -75,7 +75,7 @@ describe('appSpec', () => {
     );
 
     // when
-    wrapper.instance().history.push('/resources')
+    wrapper.instance().history.push('/resources/Observation')
 
     // then
     expect(wrapper.find('Resources').exists()).toBe(true);

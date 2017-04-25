@@ -5,6 +5,8 @@ import Navigation, { NavigationLink } from './navigation';
 import Resources from './resources';
 import Resource from './resource';
 
+const NavDropdown = require('react-bootstrap/lib/NavDropdown');
+
 const notFound = () => <div>404 - Page not found</div>;
 const Home = () => <div>Home</div>;
 
@@ -14,12 +16,15 @@ class App extends Component {
       <div style={styles.wrapper}>
         <Navigation>
           <NavigationLink to="/">Home</NavigationLink>
-          <NavigationLink to="/resources">Resources</NavigationLink>
+          <NavDropdown title="Resources" id="nav-dropdown">
+            <NavigationLink to="/resources/Patient">Patient</NavigationLink>
+            <NavigationLink to="/resources/Observation">Observation</NavigationLink>
+          </NavDropdown>
         </Navigation>
         <div style={styles.content}>
           <Switch>
             <Route exact path="/" component={Home}/>
-            <Route exact path="/resources" component={Resources} />
+            <Route exact path="/resources/:resourceType" component={Resources} />
             <Route exact path="/resources/:resourceType/:id" component={Resource} />
             <Route component={notFound} />
           </Switch>

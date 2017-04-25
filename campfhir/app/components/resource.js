@@ -12,13 +12,16 @@ class Resource extends Component {
   }
 
   componentDidMount() {
-    ResourceActions.get();
+    ResourceActions.get(
+      this.props.match.params.resourceType,
+      this.props.match.params.id
+    );
   }
 
   render() {
     return (
       <div>
-        <div>
+        <div style={{ marginBottom: 10 }}>
           <span>Resource </span>
           <span><code>{this.props.match.params.resourceType}</code></span>
           <span> with id </span>

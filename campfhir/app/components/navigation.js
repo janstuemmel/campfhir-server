@@ -4,7 +4,6 @@ import { Link, Route } from 'react-router-dom';
 const Navbar = require('react-bootstrap/lib/Navbar');
 const Nav = require('react-bootstrap/lib/Nav');
 const Glyphicon = require('react-bootstrap/lib/Glyphicon');
-const MenuItem = require('react-bootstrap/lib/MenuItem');
 
 module.exports = (props) => (
   <Navbar fluid={true} staticTop={true}>
