@@ -46,6 +46,9 @@ class Resources extends Component {
   }
 
   _onSubmit(value) {
+
+    console.log(value);
+
     if(value) {
       ResourcesActions.add(this.props.match.params.resourceType, value);
       this._closeAddResourceModal();
@@ -108,6 +111,7 @@ class AddResourceModal extends Component {
   _onSubmit(e) {
     e.preventDefault();
     const value = this.refs.form.getValue();
+    console.log(this.refs.form.validate())
     this.props.onSubmit(value);
   }
 
@@ -120,7 +124,17 @@ class AddResourceModal extends Component {
     const options = {
       fields: {
         resourceType: { disabled: true },
-        id: { disabled: true }
+        id: { disabled: true },
+        valueQuantity: {
+          fields: {
+            value: {
+              transformer: {
+                format: (val) => t.Nil.is(val) ? '' : String(val),
+                parse: (val) => val === '' ? null : parseFloat(val)
+              }
+            }
+          }
+        }
       }
     };
 
