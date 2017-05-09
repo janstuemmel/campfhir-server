@@ -47,9 +47,9 @@ describe('createSpec', () => {
     await req.get('/Observation/1').expect(404).then(res => {
 
       // then
-      expect(JSON.parse(res.text)).toMatchObject({
-        err: true,
-        msg: 'Resource not found'
+      expect(JSON.parse(res.text).issue[0]).toMatchObject({
+        code: 'NOT_FOUND',
+        details: { text:  'Resource not found' }
       });
     });
   });
