@@ -18,7 +18,7 @@ describe('createSpec', () => {
   });
 
 
-  it('should get resource', async () => {
+  it('should get resource bundle', async () => {
 
     // given
     Memory.add({
@@ -41,6 +41,7 @@ describe('createSpec', () => {
       // then
       expect(JSON.parse(res.text)).toMatchObject({
         resourceType: 'Bundle',
+        type: 'searchset',
         entry: expect.arrayContaining([
           expect.objectContaining({
             resource: expect.objectContaining({
@@ -60,5 +61,21 @@ describe('createSpec', () => {
     });
   });
 
+
+  it('should get empty resource bundle', async () => {
+
+    // when
+    await req.get('/Observation').expect(200).then(res => {
+
+
+      // then
+      expect(JSON.parse(res.text)).toMatchObject({
+        resourceType: 'Bundle',
+        type: 'searchset',
+        entry: []
+      });
+
+    });
+  });
 
 });
