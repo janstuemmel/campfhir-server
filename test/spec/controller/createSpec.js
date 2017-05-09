@@ -30,7 +30,7 @@ describe('createSpec', () => {
     };
 
     // when
-    await sendPost('/Observation', resource, 200).then(res => {
+    await sendPost('/Observation', resource, 201).then(res => {
 
       // then
       expect(JSON.parse(res.text)).toMatchObject(assign({}, resource, {
@@ -56,7 +56,7 @@ describe('createSpec', () => {
     };
 
     // when
-    await sendPost('/Observation', resource, 200).then(res => {
+    await sendPost('/Observation', resource, 201).then(res => {
 
       // then
       expect(JSON.parse(res.text).id).not.toBe('oldid');
@@ -77,11 +77,11 @@ describe('createSpec', () => {
     };
 
     // when
-    await sendPost('/Observation', resource, 200).then(res => {
+    await sendPost('/Observation', resource, 201).then(res => {
 
       // then
+      expect(res.header.location).toMatch(/^http.+\/Observation\/.+$/)
       expect(res.header).toHaveProperty('location');
-      expect(res.header.location).toMatch(/^http.+\/Observation\/.+\/_history\/.+$/);
     });
 
   });
@@ -97,7 +97,7 @@ describe('createSpec', () => {
     };
 
     // when
-    await sendPost('/Observation', resource, 200).then(res => {
+    await sendPost('/Observation', resource, 201).then(res => {
 
       // then
       expect(JSON.parse(res.text)).toHaveProperty('id');
