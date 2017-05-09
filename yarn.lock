@@ -725,13 +725,12 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fhir-proof@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/fhir-proof/-/fhir-proof-0.3.0.tgz#d6b5f15d618ad9c7c29bd0d7e1ca4f7a6d5c0933"
+fhir-proof@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/fhir-proof/-/fhir-proof-0.4.0.tgz#92f90e5bd635937ac74897da57142e949b7daf43"
   dependencies:
     lodash "^4.17.4"
     tcomb "^3.2.20"
-    uuid "^3.0.1"
 
 filename-regex@^2.0.0:
   version "2.0.0"
