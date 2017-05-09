@@ -117,4 +117,51 @@ describe('memory provider spec', () => {
     expect(entries).toHaveLength(100);
   })
 
+
+  it('should filter by nested.foo and id', () => {
+
+    // given
+    Memory.add({ resourceType: 'A', id: 1, nested: { foo: 1 } });
+    Memory.add({ resourceType: 'B', id: 2, nested: { foo: 1 } });
+    Memory.add({ resourceType: 'A', id: 2 });
+
+    // when
+    var entries = Memory.getBy({
+      'nested.foo': 1 ,
+      'id': 1 ,
+    });
+
+    // then
+    expect(entries).toHaveLength(1);
+  })
+
+
+  it('should filter by nested.foo', () => {
+
+    // given
+    Memory.add({ resourceType: 'A', id: 1, nested: { foo: 1 } });
+    Memory.add({ resourceType: 'B', id: 2, nested: { foo: 1 } });
+    Memory.add({ resourceType: 'A', id: 2 });
+
+    // when
+    var entries = Memory.getBy({ 'nested.foo': 1 });
+
+    // then
+    expect(entries).toHaveLength(2);
+  })
+
+
+  it('should filter empty rules', () => {
+
+    // given
+    Memory.add({ resourceType: 'A', id: 1, nested: { foo: 1 } });
+    Memory.add({ resourceType: 'B', id: 2, nested: { foo: 1 } });
+    Memory.add({ resourceType: 'A', id: 2 });
+
+    // when
+    var entries = Memory.getBy();
+
+    // then
+    expect(entries).toHaveLength(3);
+  })
 })
