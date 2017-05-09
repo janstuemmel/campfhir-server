@@ -15,7 +15,7 @@ class ResourcesStore extends Store {
 
   onAddCompleted(data) {
 
-    var resources = concat(this.state.resources, [ data.data ]);
+    var resources = concat(this.state.resources, [ data ]);
 
     this.setState({ resources: resources, err: null });
   }
