@@ -9,6 +9,8 @@ const parseQuery = require('querystring').parse;
 const Memory = require('../../../lib/provider/memory');
 const { collectSearchRules } = require('../../../lib/controller/search');
 
+const { code } = require('fhir-proof').Primitives;
+
 describe('searchSpec', () => {
 
   describe('routes', () => {
@@ -93,7 +95,7 @@ describe('searchSpec', () => {
         id: '1',
         status: 'final',
         subject: { reference: 'Patient/1' },
-        code: { text: 'Weight', coding: { code: 'weight' } },
+        code: { text: 'Weight', coding: [{ code: 'weight' }] },
       });
 
 
@@ -138,16 +140,16 @@ describe('searchSpec', () => {
     it('should collect search rules', () => {
 
       // given
-      var query = { subject: 'Patient/1', _id: '123' };
+      var query = {
+        subject: 'Patient/1',
+        _id: '123'
+      };
 
       // when
       var searchRules = collectSearchRules(query);
 
       // then
-      expect(searchRules).toEqual({
-        'subject.reference': 'Patient/1',
-        'id': '123'
-      })
+      expect(searchRules).toHaveLength(2);
     });
 
   });

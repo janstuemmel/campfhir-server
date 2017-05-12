@@ -1,5 +1,5 @@
 const Memory =  require('../../../lib/provider/memory');
-const { times } = require('lodash');
+const { times, get } = require('lodash');
 
 describe('memory provider spec', () => {
 
@@ -127,8 +127,8 @@ describe('memory provider spec', () => {
 
     // when
     var entries = Memory.getBy({
-      'nested.foo': 1 ,
-      'id': 1 ,
+      'nested': (elem) => get(elem, 'nested.foo') === 1,
+      'id': (elem) => get(elem, 'id') === 1,
     });
 
     // then
@@ -144,7 +144,9 @@ describe('memory provider spec', () => {
     Memory.add({ resourceType: 'A', id: 2 });
 
     // when
-    var entries = Memory.getBy({ 'nested.foo': 1 });
+    var entries = Memory.getBy({
+      'nested': (elem) => get(elem, 'nested.foo') === 1,
+    });
 
     // then
     expect(entries).toHaveLength(2);
