@@ -1,10 +1,8 @@
 const express = require('express');
-const compression = require('compression');
 const fhir = require('../');
 
 const app = express();
 
-app.use(compression());  // gzip assets
 app.use('/fhir', fhir());
 app.use(express.static('public'));
 

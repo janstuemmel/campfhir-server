@@ -23,9 +23,9 @@ Actions.add.listen((resourceType, data) => {
   })
   .then((data) => {
 
-    if(data.err) {
-      return Actions.add.failed(data);
-    }
+    // if(data.err) {
+    //   return Actions.add.failed(data);
+    // }
 
     Actions.add.completed(data);
   })
